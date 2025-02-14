@@ -1,0 +1,399 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "admin": "Admin"
+  },
+  "footer": {
+    "aboutUs": {
+      "title": "About Us",
+      "description": "Professional accounting and business consulting services tailored to your needs."
+    },
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "services": {
+      "title": "Services",
+      "accounting": "Audit & Assurance related Services Services",
+      "tax": "Tax Advisory and Planning Services",
+      "consulting": "Business Advisory and Consulting Services",
+      "financial": "Outsourcing Services",
+      "audit": "Human Capital Service"
+    },
+    "contactInfo": {
+      "title": "Contact Info",
+      "address": "Megenagna Betelhem Plaza, Addis Ababa"
+    },
+    "copyright": "© {{year}} DESSALEGN WOLDEYESUSS AUTHORIZED ACCOUNTANT AND CONSULTING | All Rights Reserved",
+    "designedBy": "Website Designed by Dagi Technology"
+  },
+  "services": {
+    "mainTitle": "Our Services",
+    "mainDescription": "Comprehensive accounting and business consulting solutions to help your business thrive",
+    "audit": "Audit & Assurance related Services",
+    "tax": "Tax Advisory & Planning",
+    "consulting": "Business Advisory & Consulting",
+    "outsourcing": "Outsourcing Services",
+    "humanCapital": "Human Capital Service",
+    "auditDescription": "Comprehensive audit and assurance services to enhance credibility and ensure compliance.",
+    "taxDescription": "Comprehensive tax advisory and planning services to optimize your tax position and ensure compliance.",
+    "consultingDescription": "Comprehensive business solutions and expert guidance for your organizations success.",
+    "outsourcingDescription": "Comprehensive outsourcing solutions to optimize your business operations.",
+    "humanCapitalDescription": "Comprehensive human resource solutions to develop and empower your workforce.",
+    "process": {
+      "title": "Our Process",
+      "consultation": {
+        "title": "Initial Consultation",
+        "description": "Understanding your needs and objectives"
+      },
+      "strategy": {
+        "title": "Strategy Development",
+        "description": "Creating a tailored solution"
+      },
+      "implementation": {
+        "title": "Implementation",
+        "description": "Executing the planned strategy"
+      },
+      "support": {
+        "title": "Ongoing Support",
+        "description": "Continuous monitoring and adjustment"
+      }
+    }
+  },
+  "otherServices": {
+    "title": "Other Services"
+  },
+  "auditServices": {
+    "title": "Audit and Assurance related Services",
+    "subtitle": "Comprehensive audit and assurance services to enhance credibility and ensure compliance",
+    "features": {
+      "title": "Our Services Include",
+      "description": "We provide the following quality focused audit and assurance services for our various clients across different sectors.",
+      "list": [
+        "Statutory audit of Financial Statements",
+        "Review of financial statements",
+        "Performance Audit",
+        "Compliance Audit",
+        "Investigation/forensic Audit"
+      ]
+    },
+    "benefits": {
+      "title": "Why Choose Our Services",
+      "items": [
+        {
+          "title": "Professional Excellence",
+          "description": "Comprehensive audit services delivered with the highest professional standards"
+        },
+        {
+          "title": "Risk Management",
+          "description": "Identify and mitigate potential risks through thorough audit procedures"
+        },
+        {
+          "title": "Compliance Assurance",
+          "description": "Ensure adherence to regulatory requirements and industry standards"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Contact us today for a consultation about your audit needs",
+      "button": "Contact Us"
+    }
+  },
+  "taxAdvisory": {
+    "title": "Tax Advisory and Planning Services",
+    "subtitle": "Comprehensive tax advisory and planning services to optimize your tax position and ensure compliance",
+    "features": {
+      "title": "Our Services Include",
+      "description": "We provide the following quality focused tax advisory and planning services to our clients.",
+      "list": [
+        "Tax planning services for companies and individuals",
+        "Consult on the transfer pricing and tax impact",
+        "Advice for Double Tax Avoidance",
+        "Negotiation of Tax Cases with the Tax Authorities and handle the client appeal at tax appeal committee and court",
+        "Capital gains tax advisory",
+        "Tax compliance review service",
+        "Client tax Audit support service during tax audit"
+      ]
+    },
+    "benefits": {
+      "title": "Why Choose Our Services",
+      "items": [
+        {
+          "title": "Expert Tax Guidance",
+          "description": "Professional advice to optimize your tax position and ensure compliance"
+        },
+        {
+          "title": "Comprehensive Support",
+          "description": "Full-service tax planning and representation during audits and appeals"
+        },
+        {
+          "title": "Risk Mitigation",
+          "description": "Proactive strategies to minimize tax risks and maximize benefits"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Optimize Your Tax Strategy?",
+      "subtitle": "Contact us today for a consultation about your tax advisory needs",
+      "button": "Contact Us"
+    }
+  },
+  "businessAdvisory": {
+    "title": "Business Advisory and Consulting Services",
+    "subtitle": "Comprehensive business solutions and expert guidance for your organization's success",
+    "features": {
+      "title": "Our Services Include",
+      "description": "We offer comprehensive business advisory and consulting services to help your organization thrive in today's competitive market.",
+      "list": [
+        "Institutionalize and Restructuring of companys Organizational structure",
+        "Feasibility studies and business plans",
+        "Investment appraisals and Investment Advisory",
+        "Company Setup and investors (FDI) hospitality and representation",
+        "Mergers and acquisitions",
+        "Business and Asset valuations",
+        "Qualitative and quantitative research / market research",
+        "Company Liquidations",
+        "Due diligence services",
+        "Advisory service on the listing of the Ethiopian capital market/ Ethiopian stock market",
+        "Functional consultant for ERP implementation"
+      ]
+    },
+    "benefits": {
+      "title": "Why Choose Our Services",
+      "items": [
+        {
+          "title": "Comprehensive Solutions",
+          "description": "End-to-end business advisory services tailored to your specific needs"
+        },
+        {
+          "title": "Expert Guidance",
+          "description": "Access to experienced professionals with deep industry knowledge"
+        },
+        {
+          "title": "Strategic Growth",
+          "description": "Data-driven strategies for sustainable business development and expansion"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "subtitle": "Contact us today for a consultation about your business advisory needs",
+      "button": "Contact Us"
+    }
+  },
+  "humanCapitalService": {
+    "title": "Human Capital Service",
+    "subtitle": "Comprehensive human resource solutions to develop and empower your workforce",
+    "features": {
+      "title": "Our Services Include",
+      "description": "We offer the following human capital services to our clients.",
+      "list": [
+        "Identify and consult the human resource requirement of the business",
+        "Provide trained employees",
+        "Training need assessment",
+        "Provide on job training and off job training",
+        "Provide specialized practical training for the finance mangers",
+        "Provide training for the tax officers and tax auditors",
+        "Provide training on the tax and other business laws and regulations",
+        "Human resource Appraisal service",
+        "Providing finance training for non-Finance Managers/owners"
+      ]
+    },
+    "benefits": {
+      "title": "Why Choose Our Services",
+      "items": [
+        {
+          "title": "Expert Training",
+          "description": "Access to specialized training programs tailored to your business needs"
+        },
+        {
+          "title": "Skilled Workforce",
+          "description": "Build and maintain a highly qualified team through our comprehensive HR services"
+        },
+        {
+          "title": "Continuous Development",
+          "description": "Ongoing support for employee growth and professional advancement"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Enhance Your Workforce?",
+      "subtitle": "Contact us today for a consultation about your human capital needs",
+      "button": "Contact Us"
+    }
+  },
+  "outsourcingService": {
+    "title": "Outsourcing Services",
+    "subtitle": "Comprehensive outsourcing solutions to optimize your business operations",
+    "features": {
+      "title": "Our Services Include",
+      "subtitle": "We provide the following quality focused outsourcing services to help streamline your business operations.",
+      "list": [
+        "Accounting and Finance administrative support",
+        "Internal Audit",
+        "Payroll management",
+        "Fund Management",
+        "Monthly or quarterly tax Return"
+      ]
+    },
+    "benefits": {
+      "title": "Why Choose Our Services",
+      "items": [
+        {
+          "title": "Operational Efficiency",
+          "description": "Streamline your business operations with professional outsourcing solutions"
+        },
+        {
+          "title": "Cost Effectiveness",
+          "description": "Reduce operational costs while maintaining high-quality service delivery"
+        },
+        {
+          "title": "Expert Management",
+          "description": "Access to specialized professionals for various business functions"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Optimize Your Business Operations?",
+      "subtitle": "Contact us today for a consultation about your outsourcing needs"
+    }
+  },
+  "home": {
+    "servicesTitle": "Our Services",
+    "servicesSubtitle": "Comprehensive solutions for your business needs",
+    "auditDescription": "Comprehensive audit and assurance services to enhance credibility.",
+    "taxDescription": "Strategic tax planning and preparation services to optimize your tax position.",
+    "consultingDescription": "Expert guidance for business growth and optimization.",
+    "outsourcingDescription": "Comprehensive outsourcing solutions to optimize your business operations.",
+    "humanCapitalDescription": "Comprehensive human resource solutions to develop and empower your workforce.",
+    "learnMore": "Learn More",
+    "stats": {
+      "happyClients": "Happy Clients",
+      "yearsExperience": "Years Experience",
+      "projectsCompleted": "Projects Completed"
+    },
+    "clients": {
+      "title": "Our Clients",
+      "subtitle": "Trusted by leading companies"
+    },
+    "cta": {
+      "ready": "Ready to Transform Your Business?",
+      "contact": "Contact us today for consultation",
+      "schedule": "Schedule Consultation"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Leading the way in professional accounting and consulting services",
+    "description": {
+      "part1": "With over 17 years of extensive experience in providing comprehensive accounting and consulting services, we have established ourselves as a trusted partner for businesses across Ethiopia. Our commitment to excellence and deep understanding of local and international financial practices sets us apart in the industry.",
+      "part2": "Led by Dessalegn Woldeyesuss (PHD), our firm combines academic expertise with practical business acumen to deliver innovative solutions that drive growth and ensure compliance. We specialize in providing tailored accounting services, tax planning, business consulting, and audit assurance that meet the unique needs of each client.",
+      "part3": "Our team of certified professionals stays at the forefront of industry developments, ensuring that our clients receive the most current and effective financial guidance. We pride ourselves on building long-term relationships with our clients, understanding their business objectives, and helping them navigate complex financial landscapes with confidence."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide exceptional accounting and consulting services that empower businesses to make informed decisions and achieve sustainable growth."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the most trusted partner in financial excellence, recognized for our integrity, expertise, and commitment to client success."
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "We maintain the highest standards of integrity, professionalism, and excellence in all our services."
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "expertTeam": {
+        "title": "Expert Team",
+        "description": "Our team of certified professionals brings years of experience and expertise."
+      },
+      "qualityService": {
+        "title": "Quality Service",
+        "description": "We deliver exceptional service with attention to detail and precision."
+      },
+      "provenTrackRecord": {
+        "title": "Proven Track Record",
+        "description": "A history of successful partnerships and satisfied clients."
+      }
+    },
+    "leadership": {
+      "title": "Our Leadership",
+      "founder": {
+        "name": "Dessalegn Woldeyesuss (PHD)",
+        "position": "Founder & Managing Director",
+        "vision": "Founded the company with a vision to revolutionize accounting and consulting services in Ethiopia.",
+        "education": "PhD in Business administration with groundbreaking research in the benefit of Electronic banking in Ethiopian commercial banks, MSc in Accounting and finance, BA in Accounting and finance and BA in Business administration.",
+        "pioneer": "Pioneer in modernizing Ethiopian accounting practices and business consulting methodologies.",
+        "bio": {
+          "part1": "As the founder and owner of our firm, Dr. Dessalegn has built this company from the ground up with a clear vision of transforming the accounting and consulting landscape in Ethiopia. His entrepreneurial spirit and deep understanding of both local and international financial practices have been the driving force behind our company's success.",
+          "part2": "Under his ownership and leadership, the firm has grown from a small consultancy to one of Ethiopia's most respected financial institutions. His hands-on approach and commitment to excellence have established new standards in the industry, while his innovative methodologies have helped countless organizations achieve their financial objectives.",
+          "part3": "Dr. Dessalegn's unique combination of academic excellence and practical business experience has enabled him to build a firm that not only provides top-tier services but also contributes significantly to the development of the accounting profession in Ethiopia. His vision continues to guide our company's growth and evolution in the dynamic world of finance and consulting."
+        }
+      },
+      "readMore": "Read More",
+      "showLess": "Show Less"
+    }
+  },
+  "blog": {
+    "title": "Our Blog",
+    "subtitle": "Stay updated with our latest insights and news",
+    "heroImageAlt": "Blog hero image",
+    "comingSoon": {
+      "title": "Coming Soon",
+      "description": "Our blog content is currently under development. Stay tuned for insightful articles about accounting, tax planning, and business consulting."
+    }
+  },
+  "hero": {
+    "title": "Expert Accounting & Business Solutions",
+    "subtitle": "Professional services tailored to your needs",
+    "welcome": "WELCOME TO DESSALEGN WOLDEYESUSS AUTHORIZED ACCOUNTANT AND CONSULTING SERVICES",
+    "provideText": "We provide and deliver",
+    "qualityText": "of exceptional quality.",
+    "imageAlt": "Professional accounting services"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for any inquiries or assistance",
+    "reachOut": "The first step is just to reach out",
+    "socialMedia": {
+      "title": "Connect with us on social media",
+      "description": "Follow us on social media to stay updated with our latest news and services."
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Sorry, something went wrong. Please try again later."
+    },
+    "info": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "addressText": "Megenagna Betelhem Plaza 5th floor Office No-509 & 510"
+    },
+    "location": {
+      "title": "Our Location",
+      "popup": "Megenagna Betelhem Plaza 5th floor Office No-509 & 510"
+    }
+  },
+  "cta": {
+    "contact": "Contact Us",
+    "schedule": "Schedule Consultation",
+    "transform": "Ready to Transform Your Business?"
+  },
+  "company": {
+    "name": "DESSALEGN WOLDEYESUSS",
+    "title": "AUTHORIZED ACCOUNTANT AND CONSULTING"
+  }
+}
