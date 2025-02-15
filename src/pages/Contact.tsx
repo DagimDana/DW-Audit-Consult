@@ -57,16 +57,34 @@ export default function Contact() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [navbarHeight, setNavbarHeight] = useState(80);
   const [isMobileScreen, setIsMobileScreen] = useState(false);
+  const [heroHeight, setHeroHeight] = useState('h-[80vh]');
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobileScreen(window.innerWidth <= 768);
+      const isMobile = window.innerWidth <= 768;
+      const isPortrait = window.innerHeight > window.innerWidth;
+      setIsMobileScreen(isMobile);
+      
+      // Set hero height based on screen conditions
+      if (isMobile) {
+        if (isPortrait) {
+          setHeroHeight('h-[40vh]');
+        } else {
+          setHeroHeight('h-[60vh]');
+        }
+      } else {
+        setHeroHeight('h-[80vh]');
+      }
     };
     
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('orientationchange', checkScreenSize);
     
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+      window.removeEventListener('orientationchange', checkScreenSize);
+    };
   }, []);
 
   const scrollToContent = () => {
@@ -74,7 +92,7 @@ export default function Contact() {
     if (contentElement) {
       const elementPosition = contentElement.offsetTop - navbarHeight;
       window.scrollTo({
-        top: isMobileScreen ? elementPosition * 0.6 : elementPosition,
+        top: elementPosition,
         behavior: 'smooth'
       });
     }
@@ -191,18 +209,20 @@ export default function Contact() {
     <div className="min-h-screen">
       <style>{customMapStyle}</style>
       {/* Hero Section with Background Image */}
-      <section className={`relative ${isMobileScreen ? 'h-[60vh]' : 'h-[80vh]'} flex items-center justify-center`}>
+      <section className={`relative ${heroHeight} flex items-center justify-center`}>
         <div className="absolute inset-0">
           <img
-            src="contact.jpg"
+            src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
             alt="Contact hero background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-[#70275a] bg-opacity-75"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-8 text-white">{t('contact.title')}</h1>
-          <p className="text-lg md:text-xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed">
+          <h1 className={`${isMobileScreen ? 'text-2xl mb-4' : 'text-3xl md:text-5xl lg:text-7xl mb-8'} font-bold text-white`}>
+            {t('contact.title')}
+          </h1>
+          <p className={`${isMobileScreen ? 'text-base' : 'text-lg md:text-xl lg:text-3xl'} text-white max-w-4xl mx-auto leading-relaxed`}>
             {t('contact.subtitle')}
           </p>
         </div>
@@ -213,9 +233,9 @@ export default function Contact() {
         >
           <div className="animate-bounce">
             <div className="relative">
-              <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-80 hover:opacity-100 transition-opacity" />
+              <ChevronDown className={`${isMobileScreen ? 'w-6 h-6' : 'w-8 h-8 md:w-12 md:h-12'} text-white opacity-80 hover:opacity-100 transition-opacity`} />
               <div className="absolute top-0 left-0 w-full h-full animate-ping">
-                <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-20" />
+                <ChevronDown className={`${isMobileScreen ? 'w-6 h-6' : 'w-8 h-8 md:w-12 md:h-12'} text-white opacity-20`} />
               </div>
             </div>
           </div>
