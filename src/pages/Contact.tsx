@@ -57,24 +57,28 @@ export default function Contact() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [navbarHeight, setNavbarHeight] = useState(80);
   const [isMobileScreen, setIsMobileScreen] = useState(false);
+  const [actualScreenWidth, setActualScreenWidth] = useState(window.screen.width);
 
+  // Update screen size on mount and resize
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobileScreen(window.innerWidth <= 768);
+    const updateScreenSize = () => {
+      setActualScreenWidth(window.screen.width);
+      setIsMobileScreen(window.screen.width <= 768);
     };
-    
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
+
+    updateScreenSize();
+    window.addEventListener('resize', updateScreenSize);
+
+    return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
 
   const scrollToContent = () => {
     const contentElement = contentRef.current;
     if (contentElement) {
       const elementPosition = contentElement.offsetTop - navbarHeight;
+      const scrollOffset = isMobileScreen ? elementPosition * 0.8 : elementPosition;
       window.scrollTo({
-        top: isMobileScreen ? elementPosition * 0.6 : elementPosition,
+        top: scrollOffset,
         behavior: 'smooth'
       });
     }
@@ -117,7 +121,6 @@ export default function Contact() {
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    // Only allow numbers and empty string
     if (value === '' || /^\d+$/.test(value)) {
       setFormData({
         ...formData,
@@ -128,7 +131,7 @@ export default function Contact() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    if (name === 'phone') return; // Phone has its own handler
+    if (name === 'phone') return;
     setFormData({
       ...formData,
       [name]: value
@@ -187,11 +190,18 @@ export default function Contact() {
     localStorage.setItem('markerPosition', JSON.stringify(markerPosition));
   }, [markerPosition]);
 
+  const getHeroHeight = () => {
+    if (actualScreenWidth <= 768) {
+      return 'h-[60vh]';
+    }
+    return 'h-[80vh]';
+  };
+
   return (
     <div className="min-h-screen">
       <style>{customMapStyle}</style>
       {/* Hero Section with Background Image */}
-      <section className={`relative ${isMobileScreen ? 'h-[60vh]' : 'h-[80vh]'} flex items-center justify-center`}>
+      <section className={`relative ${getHeroHeight()} flex items-center justify-center`}>
         <div className="absolute inset-0">
           <img
             src="contact.jpg"
