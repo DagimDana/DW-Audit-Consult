@@ -327,7 +327,6 @@ export default function Contact() {
                     pattern="\d*"
                     disabled={isSubmitting}
                   />
-                  <p className="mt-1 text-xs text-gray-500">{t('contact.form.phone.validation')}</p>
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700">{t('contact.form.subject')}</label>
