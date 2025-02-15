@@ -1,19 +1,35 @@
 import { TypeAnimation } from 'react-type-animation';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
 function Hero() {
   const { t } = useTranslation();
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileScreen(window.screen.width <= 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const scrollToContent = () => {
     window.scrollTo({
-      top: window.innerHeight,
+      top: isMobileScreen ? window.innerHeight * 0.6 : window.innerHeight,
       behavior: 'smooth'
     });
   };
 
+  const heroHeight = isMobileScreen ? 'h-[60vh]' : 'h-screen';
+  const minHeroHeight = isMobileScreen ? 'min-h-[60vh]' : 'min-h-screen';
+
   return (
-    <div className="relative min-h-[60vh] md:min-h-screen">
+    <div className={`relative ${minHeroHeight}`}>
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover"
@@ -23,7 +39,7 @@ function Hero() {
         <div className="absolute inset-0 bg-[#70275a] bg-opacity-75"></div>
       </div>
       
-      <div className="relative h-[60vh] md:h-screen flex items-center">
+      <div className={`relative ${heroHeight} flex items-center`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-32">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-16 leading-tight tracking-wide">
