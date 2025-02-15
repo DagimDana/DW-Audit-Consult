@@ -83,7 +83,7 @@ export default function Navbar() {
       shouldBeTransparent ? 'bg-transparent' : 'bg-white shadow-md'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex justify-between items-center h-20 relative">
           <div className="flex items-center flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img 
@@ -160,15 +160,19 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2 z-50">
+          <div className="md:hidden flex items-center space-x-2 relative z-[60]">
             <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md transition-colors duration-300 ${
-                shouldBeTransparent ? 'text-white hover:text-[#8bc73b] hover:bg-white/10' : 'text-gray-700 hover:text-[#70275a] hover:bg-gray-100'
+              className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 ${
+                shouldBeTransparent 
+                  ? 'text-white hover:text-[#8bc73b] hover:bg-white/10' 
+                  : 'text-gray-700 hover:text-[#70275a] hover:bg-gray-100'
               }`}
+              aria-expanded={isOpen}
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -176,7 +180,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg z-50">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               to="/"
@@ -263,7 +267,6 @@ export default function Navbar() {
     </nav>
   );
 }
-
 
 // import { useState, useEffect } from 'react';
 // import { Link, useLocation } from 'react-router-dom';
