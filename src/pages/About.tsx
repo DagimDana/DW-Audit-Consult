@@ -6,14 +6,26 @@ export default function About() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [navbarHeight, setNavbarHeight] = useState(80);
   const [showFullBio, setShowFullBio] = useState(false);
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileScreen(window.screen.width <= 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const scrollToContent = () => {
     const contentElement = contentRef.current;
     if (contentElement) {
       const elementPosition = contentElement.offsetTop - navbarHeight;
       window.scrollTo({
-        top: elementPosition,
+        top: isMobileScreen ? elementPosition * 0.6 : elementPosition,
         behavior: 'smooth'
       });
     }
@@ -35,9 +47,11 @@ export default function About() {
     };
   }, []);
 
+  const heroHeight = isMobileScreen ? 'h-[60vh]' : 'h-[80vh]';
+
   return (
     <div className="min-h-screen">
-      <section className="relative h-[80vh] flex items-center justify-center">
+      <section className={`relative ${heroHeight} flex items-center justify-center`}>
         <div className="absolute inset-0">
           <img
             src="/About.jpg"
@@ -47,20 +61,20 @@ export default function About() {
           <div className="absolute inset-0 bg-[#70275a] bg-opacity-75"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white">{t('about.title')}</h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-8 text-white">{t('about.title')}</h1>
+          <p className="text-lg md:text-xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed">
             {t('about.subtitle')}
           </p>
         </div>
         <div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+          className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
           onClick={scrollToContent}
         >
           <div className="animate-bounce">
             <div className="relative">
-              <ChevronDown className="w-12 h-12 text-white opacity-80 hover:opacity-100 transition-opacity" />
+              <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-80 hover:opacity-100 transition-opacity" />
               <div className="absolute top-0 left-0 w-full h-full animate-ping">
-                <ChevronDown className="w-12 h-12 text-white opacity-20" />
+                <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-20" />
               </div>
             </div>
           </div>
@@ -194,4 +208,3 @@ export default function About() {
     </div>
   );
 }
-
