@@ -85,7 +85,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo and Company Name Container */}
-          <div className="flex-shrink-0 flex items-center max-w-[calc(100%-80px)] md:max-w-none">
+          <div className="flex-shrink-0 flex items-center max-w-[calc(100%-60px)] md:max-w-none">
             <Link to="/" className="flex items-center">
               <img 
                 src="/logo.png" 
@@ -161,8 +161,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <LanguageSwitcher />
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md transition-colors duration-300 ${
@@ -182,6 +181,13 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg z-50">
           <div className="px-2 pt-2 pb-3 space-y-1">
+            {/* Language Switcher in mobile menu */}
+            <div className="px-3 py-2 border-b border-gray-200 mb-2">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-gray-700">{t('language')}</span>
+                <LanguageSwitcher />
+              </div>
+            </div>
             <Link
               to="/"
               className={`block px-3 py-2 rounded-md text-sm font-medium ${
