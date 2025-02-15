@@ -315,7 +315,6 @@ export default function Contact() {
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                     {t('contact.form.phone')}
-                    {/* <span className="text-xs text-gray-500 ml-1">({t('contact.form.phone.numbersOnly')})</span> */}
                   </label>
                   <input
                     type="tel"
@@ -326,7 +325,6 @@ export default function Contact() {
                     placeholder={t('e.g. 0911311257')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring focus:ring-[#70275a] focus:ring-opacity-50 text-gray-900"
                     pattern="\d*"
-                    // title={t('contact.form.phone.validation')}
                     disabled={isSubmitting}
                   />
                   <p className="mt-1 text-xs text-gray-500">{t('contact.form.phone.validation')}</p>
