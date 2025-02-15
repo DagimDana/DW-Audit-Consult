@@ -83,21 +83,22 @@ export default function Navbar() {
       shouldBeTransparent ? 'bg-transparent' : 'bg-white shadow-md'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 relative">
-          <div className="flex items-center flex-shrink-0">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo and Company Name Container */}
+          <div className="flex-shrink-0 flex items-center max-w-[calc(100%-80px)] md:max-w-none">
             <Link to="/" className="flex items-center">
               <img 
                 src="/logo.png" 
                 alt={t('company.name')} 
-                className="h-16 w-16 object-contain"
+                className="h-12 w-12 md:h-16 md:w-16 object-contain flex-shrink-0"
               />
-              <div className="ml-3 flex flex-col max-w-[200px] md:max-w-none">
-                <span className={`text-lg font-semibold leading-tight transition-colors duration-300 break-words ${
+              <div className="ml-2 md:ml-3 flex flex-col min-w-0">
+                <span className={`text-base md:text-lg font-semibold leading-tight transition-colors duration-300 truncate ${
                   shouldBeTransparent ? 'text-white' : 'text-[#70275a]'
                 }`}>
                   {t('company.name')}
                 </span>
-                <span className="text-sm text-[#8bc73b] transition-colors duration-300">
+                <span className="text-xs md:text-sm text-[#8bc73b] transition-colors duration-300 truncate">
                   {t('company.title')}
                 </span>
               </div>
@@ -160,16 +161,16 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden relative z-[60]">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 ${
+              className={`p-2 rounded-md transition-colors duration-300 ${
                 shouldBeTransparent 
                   ? 'text-white hover:text-[#8bc73b] hover:bg-white/10' 
                   : 'text-gray-700 hover:text-[#70275a] hover:bg-gray-100'
               }`}
               aria-expanded={isOpen}
-              aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -181,13 +182,6 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg z-50">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {/* Language Switcher in mobile menu */}
-            <div className="px-3 py-2 border-b border-gray-200 mb-2">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-gray-700">{t('language')}</span>
-                <LanguageSwitcher />
-              </div>
-            </div>
             <Link
               to="/"
               className={`block px-3 py-2 rounded-md text-sm font-medium ${
