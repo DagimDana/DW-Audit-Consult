@@ -60,7 +60,7 @@ export default function HumanCapitalService() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-        className="relative h-[500px] bg-cover bg-center bg-no-repeat -mt-20"
+        className="relative h-[500px] bg-cover bg-center bg-no-repeat -mt-0 md:-mt-20"
         style={{
           backgroundImage: 'url(/About.jpg)'
         }}
@@ -70,7 +70,7 @@ export default function HumanCapitalService() {
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 md:pt-20">
             <div className="flex items-center justify-center mb-6">
               <Users className="w-16 h-16 text-[#8bc73b]" />
             </div>
@@ -84,6 +84,7 @@ export default function HumanCapitalService() {
         </div>
       </section>
 
+      {/* Rest of the component remains unchanged */}
       {/* Features Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
