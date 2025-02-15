@@ -35,7 +35,7 @@ export default function AuditServices() {
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 md:pt-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 md:pt-20">
             <div className="flex items-center justify-center mb-6">
               <Calculator className="w-16 h-16 text-[#8bc73b]" />
             </div>
