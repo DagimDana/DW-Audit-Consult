@@ -74,7 +74,7 @@ export default function Contact() {
     if (contentElement) {
       const elementPosition = contentElement.offsetTop - navbarHeight;
       window.scrollTo({
-        top: elementPosition,
+        top: isMobileScreen ? elementPosition * 0.6 : elementPosition,
         behavior: 'smooth'
       });
     }
@@ -191,7 +191,7 @@ export default function Contact() {
     <div className="min-h-screen">
       <style>{customMapStyle}</style>
       {/* Hero Section with Background Image */}
-      <section className={`relative ${isMobileScreen ? 'h-[40vh]' : 'h-[80vh]'} flex items-center justify-center`}>
+      <section className={`relative ${isMobileScreen ? 'h-[60vh]' : 'h-[80vh]'} flex items-center justify-center`}>
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
@@ -201,10 +201,8 @@ export default function Contact() {
           <div className="absolute inset-0 bg-[#70275a] bg-opacity-75"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className={`${isMobileScreen ? 'text-2xl mb-4' : 'text-3xl md:text-5xl lg:text-7xl mb-8'} font-bold text-white`}>
-            {t('contact.title')}
-          </h1>
-          <p className={`${isMobileScreen ? 'text-base' : 'text-lg md:text-xl lg:text-3xl'} text-white max-w-4xl mx-auto leading-relaxed`}>
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-8 text-white">{t('contact.title')}</h1>
+          <p className="text-lg md:text-xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed">
             {t('contact.subtitle')}
           </p>
         </div>
@@ -215,115 +213,109 @@ export default function Contact() {
         >
           <div className="animate-bounce">
             <div className="relative">
-              <ChevronDown className={`${isMobileScreen ? 'w-6 h-6' : 'w-8 h-8 md:w-12 md:h-12'} text-white opacity-80 hover:opacity-100 transition-opacity`} />
+              <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-80 hover:opacity-100 transition-opacity" />
               <div className="absolute top-0 left-0 w-full h-full animate-ping">
-                <ChevronDown className={`${isMobileScreen ? 'w-6 h-6' : 'w-8 h-8 md:w-12 md:h-12'} text-white opacity-20`} />
+                <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-20" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Content Section */}
-      <div ref={contentRef} className="py-16 bg-white">
+      {/* Social Media Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-[#70275a] mb-4">{t('contact.reachOut')}</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">{t('contact.socialMedia.description')}</p>
+          <div className="flex justify-center space-x-6">
+            <a href="https://www.facebook.com/share/12Hug55LiD3/" target="_blank" rel="noopener noreferrer" className="text-[#70275a] hover:text-[#8bc73b] transition-colors">
+              <Facebook className="w-8 h-8" />
+            </a>
+            <a href="https://www.instagram.com/dessalegnw.yesuss?igsh=MTlpamd4eXF3YWdnMg==" target="_blank" rel="noopener noreferrer" className="text-[#70275a] hover:text-[#8bc73b] transition-colors">
+              <Instagram className="w-8 h-8" />
+            </a>
+            <a href="https://t.me/DessalegWYesussAuthorizedAccount" target="_blank" rel="noopener noreferrer" className="text-[#70275a] hover:text-[#8bc73b] transition-colors">
+              <Send className="w-8 h-8" />
+            </a>
+            <a href="https://www.linkedin.com/in/dessalegn-w-yesuss-phd-26817996?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-[#70275a] hover:text-[#8bc73b] transition-colors">
+              <Linkedin className="w-8 h-8" />
+            </a>
+            <a href="https://x.com/Dessalegn442217?t=Lfoz7g9I27jdLx3cxPVGVA&s=35" target="_blank" rel="noopener noreferrer" className="text-[#70275a] hover:text-[#8bc73b] transition-colors">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information */}
+      <section ref={contentRef} className="py-16 relative z-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-900">{t('contact.info.title')}</h2>
-              <p className="text-lg text-gray-600">{t('contact.info.description')}</p>
-              
-              {/* Contact Details */}
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <Mail className="w-6 h-6 text-[#70275a] mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.info.email')}</h3>
-                    <a href="mailto:info@example.com" className="text-gray-600 hover:text-[#70275a]">
-                      info@example.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <Phone className="w-6 h-6 text-[#70275a] mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.info.phone')}</h3>
-                    <a href="tel:+251912345678" className="text-gray-600 hover:text-[#70275a]">
-                      +251 91 234 5678
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-[#70275a] mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.info.address')}</h3>
-                    <p className="text-gray-600">
-                      Bole, Addis Ababa, Ethiopia
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Map */}
-              <div className="h-[300px] rounded-lg overflow-hidden shadow-md">
-                <MapContainer
-                  center={markerPosition}
-                  zoom={13}
-                  style={{ height: '100%', width: '100%' }}
-                >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={markerPosition} icon={defaultIcon}>
-                    <Popup>
-                      Our Location
-                    </Popup>
-                  </Marker>
-                </MapContainer>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <Phone className="w-8 h-8 text-[#8bc73b] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-[#70275a]">{t('contact.info.phone')}</h3>
+              <p className="text-gray-600">+251 911 311 257 <br/> +251 911 827 012</p>
             </div>
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <Mail className="w-8 h-8 text-[#8bc73b] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-[#70275a]">{t('contact.info.email')}</h3>
+              <p className="text-gray-600">dessalegnw.yesuss@gmail.com<br/>dessalegnw.yesuss@yahoo.com</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <MapPin className="w-8 h-8 text-[#8bc73b] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-[#70275a]">{t('contact.info.address')}</h3>
+              <p className="text-gray-600">{t('contact.info.addressText')}</p>
+            </div>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">{t('contact.form.title')}</h2>
-              
+            <div>
+              <h2 className="text-2xl font-bold mb-6 text-[#70275a]">{t('contact.form.title')}</h2>
+              {formStatus.type && (
+                <div
+                  className={`p-4 rounded-md mb-6 ${
+                    formStatus.type === 'success'
+                      ? 'bg-green-50 text-green-800'
+                      : 'bg-red-50 text-red-800'
+                  }`}
+                >
+                  {formStatus.message}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    {t('contact.form.name')}
-                  </label>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">{t('contact.form.name')}</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    required
                     value={formData.name}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring-[#70275a] sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring focus:ring-[#70275a] focus:ring-opacity-50 text-gray-900"
+                    required
+                    disabled={isSubmitting}
                   />
                 </div>
-
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    {t('contact.form.email')}
-                  </label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">{t('contact.form.email')}</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    required
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring-[#70275a] sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring focus:ring-[#70275a] focus:ring-opacity-50 text-gray-900"
+                    required
+                    disabled={isSubmitting}
                   />
                 </div>
-
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                     {t('contact.form.phone')}
+                    <span className="text-xs text-gray-500 ml-1">({t('contact.form.phone.numbersOnly')})</span>
                   </label>
                   <input
                     type="tel"
@@ -331,104 +323,78 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handlePhoneChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring-[#70275a] sm:text-sm"
+                    placeholder={t('contact.form.phone.placeholder')}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring focus:ring-[#70275a] focus:ring-opacity-50 text-gray-900"
+                    pattern="\d*"
+                    title={t('contact.form.phone.validation')}
+                    disabled={isSubmitting}
                   />
+                  <p className="mt-1 text-xs text-gray-500">{t('contact.form.phone.validation')}</p>
                 </div>
-
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                    {t('contact.form.subject')}
-                  </label>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700">{t('contact.form.subject')}</label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
-                    required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring-[#70275a] sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring focus:ring-[#70275a] focus:ring-opacity-50 text-gray-900"
+                    required
+                    disabled={isSubmitting}
                   />
                 </div>
-
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    {t('contact.form.message')}
-                  </label>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">{t('contact.form.message')}</label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={4}
-                    required
                     value={formData.message}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring-[#70275a] sm:text-sm"
-                  />
+                    rows={4}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring focus:ring-[#70275a] focus:ring-opacity-50 text-gray-900"
+                    required
+                    disabled={isSubmitting}
+                  ></textarea>
                 </div>
-
-                {formStatus.type && (
-                  <div className={`rounded-md p-4 ${
-                    formStatus.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'
-                  }`}>
-                    {formStatus.message}
-                  </div>
-                )}
-
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#70275a] hover:bg-[#8f3275] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#70275a] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#70275a] text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="animate-spin -ml-1 mr-2 h-4 w-4" />
+                      <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5" />
                       {t('contact.form.sending')}
                     </>
                   ) : (
-                    <>
-                      <Send className="-ml-1 mr-2 h-4 w-4" />
-                      {t('contact.form.submit')}
-                    </>
+                    t('contact.form.send')
                   )}
                 </button>
               </form>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Social Media Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">{t('contact.social.title')}</h2>
-            <div className="flex justify-center space-x-6">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#70275a]"
-              >
-                <span className="sr-only">Facebook</span>
-                <Facebook className="h-8 w-8" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#70275a]"
-              >
-                <span className="sr-only">Instagram</span>
-                <Instagram className="h-8 w-8" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#70275a]"
-              >
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-8 w-8" />
-              </a>
+            {/* Map Section */}
+            <div className="relative">
+              <h2 className="text-2xl font-bold mb-6 text-[#70275a]">{t('contact.location.title')}</h2>
+              <div className="h-[400px] bg-gray-100 rounded-lg overflow-hidden relative">
+                <MapContainer 
+                  center={markerPosition}
+                  zoom={15}
+                  scrollWheelZoom={true}
+                  className="h-full w-full"
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+                  <Marker position={markerPosition} icon={defaultIcon}>
+                    <Popup>
+                      {t('contact.location.popup')}
+                    </Popup>
+                  </Marker>
+                </MapContainer>
+              </div>
             </div>
           </div>
         </div>
