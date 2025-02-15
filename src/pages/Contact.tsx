@@ -56,13 +56,25 @@ export default function Contact() {
   const { t } = useTranslation();
   const contentRef = useRef<HTMLDivElement>(null);
   const [navbarHeight, setNavbarHeight] = useState(80);
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileScreen(window.innerWidth <= 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const scrollToContent = () => {
     const contentElement = contentRef.current;
     if (contentElement) {
       const elementPosition = contentElement.offsetTop - navbarHeight;
       window.scrollTo({
-        top: elementPosition,
+        top: isMobileScreen ? elementPosition * 0.6 : elementPosition,
         behavior: 'smooth'
       });
     }
@@ -179,31 +191,31 @@ export default function Contact() {
     <div className="min-h-screen">
       <style>{customMapStyle}</style>
       {/* Hero Section with Background Image */}
-      <section className="relative h-[80vh] flex items-center justify-center">
+      <section className={`relative ${isMobileScreen ? 'h-[60vh]' : 'h-[80vh]'} flex items-center justify-center`}>
         <div className="absolute inset-0">
           <img
-            src="/contact.jpg"
-            alt="Calculator and financial documents"
+            src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
+            alt="Contact hero background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-[#70275a] bg-opacity-75"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white">{t('contact.title')}</h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-8 text-white">{t('contact.title')}</h1>
+          <p className="text-lg md:text-xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed">
             {t('contact.subtitle')}
           </p>
         </div>
         {/* Animated Down Arrow */}
         <div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+          className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
           onClick={scrollToContent}
         >
           <div className="animate-bounce">
             <div className="relative">
-              <ChevronDown className="w-12 h-12 text-white opacity-80 hover:opacity-100 transition-opacity" />
+              <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-80 hover:opacity-100 transition-opacity" />
               <div className="absolute top-0 left-0 w-full h-full animate-ping">
-                <ChevronDown className="w-12 h-12 text-white opacity-20" />
+                <ChevronDown className="w-8 h-8 md:w-12 md:h-12 text-white opacity-20" />
               </div>
             </div>
           </div>
@@ -303,6 +315,7 @@ export default function Contact() {
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                     {t('contact.form.phone')}
+                    <span className="text-xs text-gray-500 ml-1">({t('contact.form.phone.numbersOnly')})</span>
                   </label>
                   <input
                     type="tel"
@@ -310,12 +323,13 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handlePhoneChange}
-                    placeholder="e.g. 0911311257"
+                    placeholder={t('contact.form.phone.placeholder')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#70275a] focus:ring focus:ring-[#70275a] focus:ring-opacity-50 text-gray-900"
                     pattern="\d*"
-                    title="Please enter numbers only"
+                    title={t('contact.form.phone.validation')}
                     disabled={isSubmitting}
                   />
+                  <p className="mt-1 text-xs text-gray-500">{t('contact.form.phone.validation')}</p>
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700">{t('contact.form.subject')}</label>
@@ -388,4 +402,3 @@ export default function Contact() {
     </div>
   );
 }
-
