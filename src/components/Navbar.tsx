@@ -160,12 +160,12 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-2 z-50">
             <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`transition-colors duration-300 ${
-                shouldBeTransparent ? 'text-white hover:text-[#8bc73b]' : 'text-gray-700 hover:text-[#70275a]'
+              className={`p-2 rounded-md transition-colors duration-300 ${
+                shouldBeTransparent ? 'text-white hover:text-[#8bc73b] hover:bg-white/10' : 'text-gray-700 hover:text-[#70275a] hover:bg-gray-100'
               }`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -263,7 +263,6 @@ export default function Navbar() {
     </nav>
   );
 }
-
 
 
 // import { useState, useEffect } from 'react';
