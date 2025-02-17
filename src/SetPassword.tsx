@@ -15,29 +15,25 @@ export default function SetPassword() {
   useEffect(() => {
     const initializeSession = async () => {
       try {
-        const hashParams = new URLSearchParams(location.hash.substring(1));
-        const type = hashParams.get('type');
-        const accessToken = hashParams.get('access_token');
-        const refreshToken = hashParams.get('refresh_token');
+        // Get token from URL query parameter
+        const params = new URLSearchParams(location.search);
+        const token = params.get('token');
 
-        if (!type || !accessToken || !refreshToken) {
-          navigate('/admin');
-          return;
+        if (!token) {
+          throw new Error('No invitation token found');
         }
 
-        // Set the session with the tokens from the URL
-        const { data, error } = await supabase.auth.setSession({
-          access_token: accessToken,
-          refresh_token: refreshToken
+        // Verify the token and create a session
+        const { data, error } = await supabase.auth.verifyOtp({
+          token_hash: token,
+          type: 'invite',
         });
 
-        if (error) {
-          throw error;
-        }
-
+        if (error) throw error;
         setSession(data.session);
       } catch (err: any) {
         setError(err.message);
+        // Wait a moment before redirecting to show the error
         setTimeout(() => {
           navigate('/admin');
         }, 3000);

@@ -38,23 +38,28 @@ export default function Admin() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   useEffect(() => {
-    // Check for invitation token in URL
-    const hashParams = new URLSearchParams(location.hash.substring(1));
-    const type = hashParams.get('type');
-    const accessToken = hashParams.get('access_token');
-    const refreshToken = hashParams.get('refresh_token');
+    const handleAuth = async () => {
+      try {
+        // First check if we have an invite link
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token');
+        
+        if (token) {
+          // This is an invite link, redirect to set-password
+          navigate(`/set-password?token=${token}`);
+          return;
+        }
 
-    if (type === 'invite' && accessToken && refreshToken) {
-      // Redirect to set-password page with the tokens
-      navigate('/set-password#' + location.hash.substring(1));
-      return;
-    }
+        // Otherwise check for current session
+        const { data: { session } } = await supabase.auth.getSession();
+        setState(prev => ({ ...prev, session, loading: false }));
+        if (session) fetchMessages();
+      } catch (error) {
+        setState(prev => ({ ...prev, error: 'Authentication error', loading: false }));
+      }
+    };
 
-    // Check current session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setState(prev => ({ ...prev, session, loading: false }));
-      if (session) fetchMessages();
-    });
+    handleAuth();
 
     const {
       data: { subscription },
@@ -64,7 +69,7 @@ export default function Admin() {
     });
 
     return () => subscription.unsubscribe();
-  }, [navigate, location.hash]);
+  }, [navigate]);
 
   const fetchMessages = async () => {
     try {
