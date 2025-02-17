@@ -209,25 +209,25 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <Link to="/" className="text-3xl font-bold text-[#70275a] hover:text-opacity-80 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-8 space-y-4 sm:space-y-0">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#70275a]">
             Contact Messages
-          </Link>
-          <div className="flex items-center space-x-4">
+          </h1>
+          <div className="flex items-center space-x-2 sm:space-x-4 w-full sm:w-auto justify-end">
             <Link
               to="/"
-              className="flex items-center px-4 py-2 bg-[#70275a] text-white rounded-md hover:bg-opacity-90 transition-colors"
+              className="flex items-center px-2 sm:px-4 py-1.5 sm:py-2 bg-[#70275a] text-white text-sm rounded-md hover:bg-opacity-90 transition-colors"
             >
-              <Home className="w-4 h-4 mr-2" />
-              Back to Home
+              <Home className="w-4 h-4 sm:mr-2" />
+              <span className="hidden sm:inline">Back to Home</span>
             </Link>
             <button
               onClick={handleLogout}
-              className="flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors"
+              className="flex items-center px-2 sm:px-4 py-1.5 sm:py-2 bg-gray-200 text-gray-700 text-sm rounded-md hover:bg-gray-300 transition-colors"
             >
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
+              <LogOut className="w-4 h-4 sm:mr-2" />
+              <span className="hidden sm:inline">Logout</span>
             </button>
           </div>
         </div>
