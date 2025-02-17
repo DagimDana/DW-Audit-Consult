@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from './lib/supabase';
 import { Loader2, Trash2, LogOut, Home } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 interface ContactMessage {
   id: string;
@@ -21,6 +21,8 @@ interface AdminState {
 }
 
 export default function Admin() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [state, setState] = useState<AdminState>({
     session: null,
     messages: [],
@@ -36,6 +38,17 @@ export default function Admin() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   useEffect(() => {
+    // Check for invitation token in URL
+    const hashParams = new URLSearchParams(location.hash.substring(1));
+    const type = hashParams.get('type');
+    const accessToken = hashParams.get('access_token');
+
+    if (type === 'invite' && accessToken) {
+      // If this is an invite link, redirect to set password page
+      navigate('/set-password' + location.hash);
+      return;
+    }
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setState(prev => ({ ...prev, session, loading: false }));
       if (session) fetchMessages();
@@ -49,7 +62,7 @@ export default function Admin() {
     });
 
     return () => subscription.unsubscribe();
-  }, []);
+  }, [navigate, location.hash]);
 
   const fetchMessages = async () => {
     try {
