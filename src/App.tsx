@@ -9,6 +9,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Admin from './Admin';
+import SetPassword from './SetPassword';
 import AuditServices from './pages/AuditServices';
 import TaxAdvisoryPlanning from './pages/TaxAdvisoryPlanning';
 import BusinessAdvisoryConsulting from './pages/BusinessAdvisoryConsulting';
@@ -22,8 +23,9 @@ function App() {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Routes>
-          {/* Admin route without Navbar and Footer */}
+          {/* Admin and SetPassword routes without Navbar and Footer */}
           <Route path="/admin" element={<Admin />} />
+          <Route path="/set-password" element={<SetPassword />} />
 
           {/* All other routes with Navbar and Footer */}
           <Route
