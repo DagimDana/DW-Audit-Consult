@@ -8,25 +8,43 @@ export default function SetPassword() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [session, setSession] = useState<any>(null);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    const hashParams = new URLSearchParams(location.hash.substring(1));
-    const type = hashParams.get('type');
-    const accessToken = hashParams.get('access_token');
-    const refreshToken = hashParams.get('refresh_token');
+    const initializeSession = async () => {
+      try {
+        const hashParams = new URLSearchParams(location.hash.substring(1));
+        const type = hashParams.get('type');
+        const accessToken = hashParams.get('access_token');
+        const refreshToken = hashParams.get('refresh_token');
 
-    if (!type || !accessToken || !refreshToken) {
-      navigate('/admin');
-      return;
-    }
+        if (!type || !accessToken || !refreshToken) {
+          navigate('/admin');
+          return;
+        }
 
-    // Set the session with the tokens from the URL
-    supabase.auth.setSession({
-      access_token: accessToken,
-      refresh_token: refreshToken
-    });
+        // Set the session with the tokens from the URL
+        const { data, error } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken
+        });
+
+        if (error) {
+          throw error;
+        }
+
+        setSession(data.session);
+      } catch (err: any) {
+        setError(err.message);
+        setTimeout(() => {
+          navigate('/admin');
+        }, 3000);
+      }
+    };
+
+    initializeSession();
   }, [location, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,6 +78,22 @@ export default function SetPassword() {
       setLoading(false);
     }
   };
+
+  if (!session) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
+          <h1 className="text-2xl font-bold text-[#70275a] mb-4">Loading...</h1>
+          {error && (
+            <div className="bg-red-50 text-red-800 p-4 rounded-md">
+              {error}
+              <p className="mt-2">Redirecting to admin page...</p>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">

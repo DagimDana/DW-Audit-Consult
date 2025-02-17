@@ -45,16 +45,12 @@ export default function Admin() {
     const refreshToken = hashParams.get('refresh_token');
 
     if (type === 'invite' && accessToken && refreshToken) {
-      // If this is an invite link with both tokens, set the session and redirect
-      supabase.auth.setSession({
-        access_token: accessToken,
-        refresh_token: refreshToken,
-      }).then(() => {
-        navigate('/set-password' + location.hash);
-      });
+      // Redirect to set-password page with the tokens
+      navigate('/set-password#' + location.hash.substring(1));
       return;
     }
 
+    // Check current session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setState(prev => ({ ...prev, session, loading: false }));
       if (session) fetchMessages();
