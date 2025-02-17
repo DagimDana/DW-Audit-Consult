@@ -42,10 +42,16 @@ export default function Admin() {
     const hashParams = new URLSearchParams(location.hash.substring(1));
     const type = hashParams.get('type');
     const accessToken = hashParams.get('access_token');
+    const refreshToken = hashParams.get('refresh_token');
 
-    if (type === 'invite' && accessToken) {
-      // If this is an invite link, redirect to set password page
-      navigate('/set-password' + location.hash);
+    if (type === 'invite' && accessToken && refreshToken) {
+      // If this is an invite link with both tokens, set the session and redirect
+      supabase.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken,
+      }).then(() => {
+        navigate('/set-password' + location.hash);
+      });
       return;
     }
 

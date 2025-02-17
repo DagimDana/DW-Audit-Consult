@@ -12,11 +12,21 @@ export default function SetPassword() {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if we have a valid hash parameter for password reset
     const hashParams = new URLSearchParams(location.hash.substring(1));
-    if (!hashParams.get('type') || !hashParams.get('access_token')) {
+    const type = hashParams.get('type');
+    const accessToken = hashParams.get('access_token');
+    const refreshToken = hashParams.get('refresh_token');
+
+    if (!type || !accessToken || !refreshToken) {
       navigate('/admin');
+      return;
     }
+
+    // Set the session with the tokens from the URL
+    supabase.auth.setSession({
+      access_token: accessToken,
+      refresh_token: refreshToken
+    });
   }, [location, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,22 +46,13 @@ export default function SetPassword() {
       setLoading(true);
       setError(null);
 
-      // Get the access token from the URL hash
-      const hashParams = new URLSearchParams(location.hash.substring(1));
-      const accessToken = hashParams.get('access_token');
-
-      if (!accessToken) {
-        throw new Error('No access token found');
-      }
-
-      // Update the user's password
       const { error } = await supabase.auth.updateUser({
         password: password
       });
 
       if (error) throw error;
 
-      // Redirect to admin panel
+      // After successful password update, redirect to admin
       navigate('/admin');
     } catch (err: any) {
       setError(err.message || 'An error occurred while setting the password');
