@@ -62,7 +62,7 @@ export default function HumanCapitalService() {
       <section 
         className="relative h-[500px] bg-cover bg-center bg-no-repeat -mt-0 md:-mt-20"
         style={{
-          backgroundImage: 'url(/About.jpg)'
+          backgroundImage: 'url(/HR.jpg)'
         }}
       >
         {/* Overlay */}

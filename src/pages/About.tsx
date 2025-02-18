@@ -54,7 +54,7 @@ export default function About() {
       <section className={`relative ${heroHeight} flex items-center justify-center`}>
         <div className="absolute inset-0">
           <img
-            src="/About.jpg"
+            src="/cal.jpg"
             alt="Calculator and financial documents"
             className="w-full h-full object-cover"
           />
