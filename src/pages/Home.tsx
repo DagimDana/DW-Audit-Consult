@@ -70,7 +70,7 @@ export default function Home() {
     '/Custom.png',
     '/Dashin.png',
     '/es.jpeg',
-    '/evangelican.jpeg',
+    '/evangelican .jpeg',
     '/gospel.png',
     '/Green.png',
     '/ministry.png',
@@ -196,8 +196,12 @@ export default function Home() {
           <div 
             ref={scrollRef}
             className="relative flex overflow-x-hidden"
+            style={{
+              '--scroll-duration': '60s',
+              '--scroll-pause': '0s'
+            } as React.CSSProperties}
           >
-            <div className="flex animate-scroll space-x-20 py-8">
+            <div className="flex animate-[scroll_60s_linear_infinite] space-x-20 py-8">
               {clients.map((logo, index) => (
                 <div 
                   key={index} 
@@ -234,5 +238,3 @@ export default function Home() {
     </div>
   );
 }
-
-
