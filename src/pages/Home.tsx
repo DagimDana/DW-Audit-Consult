@@ -77,7 +77,8 @@ export default function Home() {
     '/MOTR.jpg',
     '/unity.png',
     '/Spe.png',
-    '/10A.png',
+    '/10A.jpg',
+    '/AI.jpg',
     // Add the same logos again to create a seamless loop
     '/AA.png',
     '/AArevenue.jpg',
@@ -101,7 +102,8 @@ export default function Home() {
     '/MOTR.jpg',
     '/unity.png',
     '/Spe.png',
-    '/10A.png',
+    '/10A.jpg',
+    '/AI.jpg',
   ];
 
   const scrollRef = useRef<HTMLDivElement>(null);
