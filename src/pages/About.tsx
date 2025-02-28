@@ -95,7 +95,7 @@ export default function About() {
             <div className="relative floating-image-wrapper">
               <div className="aspect-w-4 aspect-h-3">
                 <img
-                  src="/officee.jpg"
+                  src="/Officee.jpg"
                   alt="Our office"
                   className="floating-image object-cover rounded-lg shadow-xl"
                 />
