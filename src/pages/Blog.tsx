@@ -83,12 +83,60 @@ export default function Blog() {
       <section ref={contentRef} className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Blog Post 1 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                alt={t('blog.posts.taxPlanning.imageAlt')} 
+                className="w-full h-48 object-cover"
+              />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.comingSoon.title')}</h3>
-                <p className="text-gray-600">
-                  {t('blog.comingSoon.description')}
+                <div className="text-sm text-gray-500 mb-2">{t('blog.posts.taxPlanning.date')}</div>
+                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.taxPlanning.title')}</h3>
+                <p className="text-gray-600 mb-4">
+                  {t('blog.posts.taxPlanning.excerpt')}
                 </p>
+                <a href="#" className="text-[#70275a] font-medium hover:underline">
+                  {t('blog.readMore')} &rarr;
+                </a>
+              </div>
+            </div>
+
+            {/* Blog Post 2 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                alt={t('blog.posts.auditPreparation.imageAlt')} 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-gray-500 mb-2">{t('blog.posts.auditPreparation.date')}</div>
+                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.auditPreparation.title')}</h3>
+                <p className="text-gray-600 mb-4">
+                  {t('blog.posts.auditPreparation.excerpt')}
+                </p>
+                <a href="#" className="text-[#70275a] font-medium hover:underline">
+                  {t('blog.readMore')} &rarr;
+                </a>
+              </div>
+            </div>
+
+            {/* Blog Post 3 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                alt={t('blog.posts.businessGrowth.imageAlt')} 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-gray-500 mb-2">{t('blog.posts.businessGrowth.date')}</div>
+                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.businessGrowth.title')}</h3>
+                <p className="text-gray-600 mb-4">
+                  {t('blog.posts.businessGrowth.excerpt')}
+                </p>
+                <a href="#" className="text-[#70275a] font-medium hover:underline">
+                  {t('blog.readMore')} &rarr;
+                </a>
               </div>
             </div>
           </div>

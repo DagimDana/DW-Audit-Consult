@@ -343,6 +343,27 @@
     "title": "Our Blog",
     "subtitle": "Stay updated with our latest insights and news",
     "heroImageAlt": "Blog hero image",
+    "readMore": "Read More",
+    "posts": {
+      "taxPlanning": {
+        "title": "Effective Tax Planning Strategies for Ethiopian Businesses",
+        "date": "June 15, 2024",
+        "excerpt": "Discover key strategies that businesses in Ethiopia can use to fulfill their tax obligations while minimizing tax expenses.",
+        "imageAlt": "Tax planning image"
+      },
+      "auditPreparation": {
+        "title": "How to Prepare Your Business for an Audit Process",
+        "date": "June 2, 2024",
+        "excerpt": "Learn about the preparations and best practices your business should adopt to ensure an effective audit process.",
+        "imageAlt": "Audit preparation image"
+      },
+      "businessGrowth": {
+        "title": "5 Key Strategies to Grow Your Business in Ethiopia",
+        "date": "May 18, 2024",
+        "excerpt": "Discover practical tips you can implement to grow and expand your business in the current Ethiopian economy.",
+        "imageAlt": "Business growth image"
+      }
+    },
     "comingSoon": {
       "title": "Coming Soon",
       "description": "Our blog content is currently under development. Stay tuned for insightful articles about accounting, tax planning, and business consulting."
