@@ -106,15 +106,15 @@ export default function Blog() {
                   />
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="text-sm text-gray-500 mb-2">{t('blog.posts.taxPlanning.date')}</div>
-                  <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.taxPlanning.title')}</h3>
-                  <p className="text-gray-600 mb-4">
-                    {t('blog.posts.taxPlanning.excerpt')}
-                    {expandedPosts.taxPlanning && (
-                      <span className="block mt-2">
-                        {t('blog.posts.taxPlanning.fullContent')}
-                      </span>
-                    )}
+                <div className="text-sm text-gray-500 mb-2">{t('blog.posts.taxPlanning.date')}</div>
+                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.taxPlanning.title')}</h3>
+                <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
+                  {t('blog.posts.taxPlanning.excerpt')}
+                  {expandedPosts.taxPlanning && (
+                    <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
+                      {t('blog.posts.taxPlanning.fullContent')}
+                    </span>
+                  )}
                   </p>
                   <button 
                     onClick={() => togglePostExpansion('taxPlanning')} 
@@ -137,15 +137,15 @@ export default function Blog() {
                   />
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="text-sm text-gray-500 mb-2">{t('blog.posts.auditPreparation.date')}</div>
-                  <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.auditPreparation.title')}</h3>
-                  <p className="text-gray-600 mb-4">
-                    {t('blog.posts.auditPreparation.excerpt')}
-                    {expandedPosts.auditPreparation && (
-                      <span className="block mt-2">
-                        {t('blog.posts.auditPreparation.fullContent')}
-                      </span>
-                    )}
+                <div className="text-sm text-gray-500 mb-2">{t('blog.posts.auditPreparation.date')}</div>
+                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.auditPreparation.title')}</h3>
+                <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
+                  {t('blog.posts.auditPreparation.excerpt')}
+                  {expandedPosts.auditPreparation && (
+                    <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
+                      {t('blog.posts.auditPreparation.fullContent')}
+                    </span>
+                  )}
                   </p>
                   <button 
                     onClick={() => togglePostExpansion('auditPreparation')} 
