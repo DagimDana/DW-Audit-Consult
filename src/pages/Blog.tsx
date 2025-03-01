@@ -167,16 +167,16 @@ export default function Blog() {
                     className="w-full h-48 md:h-full object-cover"
                   />
                 </div>
-                <div className="md:w-2/3 p-6">
-                  <div className="text-sm text-gray-500 mb-2">{t('blog.posts.businessGrowth.date')}</div>
-                  <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.businessGrowth.title')}</h3>
-                  <p className="text-gray-600 mb-4">
-                    {t('blog.posts.businessGrowth.excerpt')}
-                    {expandedPosts.businessGrowth && (
-                      <span className="block mt-2">
-                        {t('blog.posts.businessGrowth.fullContent')}
-                      </span>
-                    )}
+              <div className="md:w-2/3 p-6">
+              <div className="text-sm text-gray-500 mb-2">{t('blog.posts.businessGrowth.date')}</div>
+              <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.businessGrowth.title')}</h3>
+              <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
+                {t('blog.posts.businessGrowth.excerpt')}
+                {expandedPosts.businessGrowth && (
+                  <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
+                    {t('blog.posts.businessGrowth.fullContent')}
+                  </span>
+                )}
                   </p>
                   <button 
                     onClick={() => togglePostExpansion('businessGrowth')} 
