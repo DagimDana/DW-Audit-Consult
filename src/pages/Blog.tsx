@@ -100,7 +100,7 @@ export default function Blog() {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <img 
-                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqM-RLlDhz-83WKIqhXwPaWqy5nwlrh3S7A&s" 
                     alt={t('blog.posts.taxPlanning.imageAlt')} 
                     className="w-full h-48 md:h-full object-cover"
                   />
@@ -131,7 +131,7 @@ export default function Blog() {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <img 
-                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                    src="https://newbusinessethiopia.com/amharic/wp-content/uploads/sites/4/2023/06/%E1%88%B5%E1%88%88%E1%8A%AA%E1%88%AB%E1%8B%AD-%E1%8C%88%E1%89%A2-%E1%8C%8D%E1%89%A5%E1%88%AD.jpg" 
                     alt={t('blog.posts.auditPreparation.imageAlt')} 
                     className="w-full h-48 md:h-full object-cover"
                   />
@@ -162,7 +162,7 @@ export default function Blog() {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <img 
-                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2ctStmXcYs9vMjIOURpJDW7dsl_AwZuAOA&s" 
                     alt={t('blog.posts.businessGrowth.imageAlt')} 
                     className="w-full h-48 md:h-full object-cover"
                   />
