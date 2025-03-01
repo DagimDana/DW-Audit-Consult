@@ -112,8 +112,7 @@ export default function Blog() {
                     {t('blog.posts.taxPlanning.excerpt')}
                     {expandedPosts.taxPlanning && (
                       <span className="block mt-2">
-                        {t('blog.posts.taxPlanning.fullContent', 
-                          'Tax planning is a year-round strategy that can help individuals and businesses minimize their tax liability. By understanding the tax code and taking advantage of available deductions and credits, you can keep more of your hard-earned money. Our experts recommend reviewing your tax situation quarterly to identify opportunities for tax savings and to ensure compliance with changing regulations. This proactive approach can lead to significant savings and prevent surprises during tax season.')}
+                        {t('blog.posts.taxPlanning.fullContent')}
                       </span>
                     )}
                   </p>
@@ -121,7 +120,7 @@ export default function Blog() {
                     onClick={() => togglePostExpansion('taxPlanning')} 
                     className="text-[#70275a] font-medium hover:underline"
                   >
-                    {expandedPosts.taxPlanning ? t('blog.readLess') : t('blog.readMore')} &rarr;
+                    {expandedPosts.taxPlanning ? t('blog.posts.taxPlanning.showLess') : t('blog.posts.taxPlanning.readMore')} &rarr;
                   </button>
                 </div>
               </div>
@@ -144,8 +143,7 @@ export default function Blog() {
                     {t('blog.posts.auditPreparation.excerpt')}
                     {expandedPosts.auditPreparation && (
                       <span className="block mt-2">
-                        {t('blog.posts.auditPreparation.fullContent', 
-                          'Preparing for an audit doesn\'t have to be stressful. With proper organization and documentation throughout the year, you can face an audit with confidence. Our team recommends maintaining detailed records of all financial transactions, keeping receipts organized by category, and documenting business expenses thoroughly. Additionally, having a clear understanding of your tax positions and the rationale behind them can help streamline the audit process. Working with a professional can also provide peace of mind and ensure you\'re fully prepared.')}
+                        {t('blog.posts.auditPreparation.fullContent')}
                       </span>
                     )}
                   </p>
@@ -153,7 +151,7 @@ export default function Blog() {
                     onClick={() => togglePostExpansion('auditPreparation')} 
                     className="text-[#70275a] font-medium hover:underline"
                   >
-                    {expandedPosts.auditPreparation ? t('blog.readLess') : t('blog.readMore')} &rarr;
+                    {expandedPosts.auditPreparation ? t('blog.posts.auditPreparation.showLess') : t('blog.posts.auditPreparation.readMore')} &rarr;
                   </button>
                 </div>
               </div>
@@ -176,8 +174,7 @@ export default function Blog() {
                     {t('blog.posts.businessGrowth.excerpt')}
                     {expandedPosts.businessGrowth && (
                       <span className="block mt-2">
-                        {t('blog.posts.businessGrowth.fullContent', 
-                          'Strategic financial planning is essential for sustainable business growth. By analyzing your financial data, identifying trends, and forecasting future performance, you can make informed decisions that drive growth. Our financial experts recommend developing a comprehensive business plan that includes short-term and long-term goals, financial projections, and key performance indicators. Regular financial reviews and adjustments to your strategy based on actual performance can help keep your business on track for success.')}
+                        {t('blog.posts.businessGrowth.fullContent')}
                       </span>
                     )}
                   </p>
@@ -185,7 +182,7 @@ export default function Blog() {
                     onClick={() => togglePostExpansion('businessGrowth')} 
                     className="text-[#70275a] font-medium hover:underline"
                   >
-                    {expandedPosts.businessGrowth ? t('blog.readLess') : t('blog.readMore')} &rarr;
+                    {expandedPosts.businessGrowth ? t('blog.posts.businessGrowth.showLess') : t('blog.posts.businessGrowth.readMore')} &rarr;
                   </button>
                 </div>
               </div>
