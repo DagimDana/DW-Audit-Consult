@@ -15,7 +15,7 @@ export default function Blog() {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobileScreen(window.screen.width <= 768);
+      setIsMobileScreen(window.innerWidth <= 768);
     };
     
     checkScreenSize();
@@ -95,11 +95,11 @@ export default function Blog() {
       <section ref={contentRef} className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
-            {/* Blog Post 1 - Horizontal Layout */}
+            {/* Blog Post 1 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 h-48 md:h-auto">
-                  <div className="h-full">
+              <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="md:col-span-1 md:self-start">
+                  <div className="aspect-[4/3] w-full">
                     <img 
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqM-RLlDhz-83WKIqhXwPaWqy5nwlrh3S7A&s" 
                       alt={t('blog.posts.taxPlanning.imageAlt')} 
@@ -107,16 +107,16 @@ export default function Blog() {
                     />
                   </div>
                 </div>
-                <div className="md:w-2/3 p-6">
-                <div className="text-sm text-gray-500 mb-2">{t('blog.posts.taxPlanning.date')}</div>
-                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.taxPlanning.title')}</h3>
-                <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
-                  {t('blog.posts.taxPlanning.excerpt')}
-                  {expandedPosts.taxPlanning && (
-                    <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
-                      {t('blog.posts.taxPlanning.fullContent')}
-                    </span>
-                  )}
+                <div className="md:col-span-2 p-6">
+                  <div className="text-sm text-gray-500 mb-2">{t('blog.posts.taxPlanning.date')}</div>
+                  <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.taxPlanning.title')}</h3>
+                  <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
+                    {t('blog.posts.taxPlanning.excerpt')}
+                    {expandedPosts.taxPlanning && (
+                      <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
+                        {t('blog.posts.taxPlanning.fullContent')}
+                      </span>
+                    )}
                   </p>
                   <button 
                     onClick={() => togglePostExpansion('taxPlanning')} 
@@ -128,11 +128,11 @@ export default function Blog() {
               </div>
             </div>
 
-            {/* Blog Post 2 - Horizontal Layout */}
+            {/* Blog Post 2 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 h-48 md:h-auto">
-                  <div className="h-full">
+              <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="md:col-span-1 md:self-start">
+                  <div className="aspect-[4/3] w-full">
                     <img 
                       src="https://newbusinessethiopia.com/amharic/wp-content/uploads/sites/4/2023/06/%E1%88%B5%E1%88%88%E1%8A%AA%E1%88%AB%E1%8B%AD-%E1%8C%88%E1%89%A2-%E1%8C%8D%E1%89%A5%E1%88%AD.jpg" 
                       alt={t('blog.posts.auditPreparation.imageAlt')} 
@@ -140,16 +140,16 @@ export default function Blog() {
                     />
                   </div>
                 </div>
-                <div className="md:w-2/3 p-6">
-                <div className="text-sm text-gray-500 mb-2">{t('blog.posts.auditPreparation.date')}</div>
-                <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.auditPreparation.title')}</h3>
-                <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
-                  {t('blog.posts.auditPreparation.excerpt')}
-                  {expandedPosts.auditPreparation && (
-                    <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
-                      {t('blog.posts.auditPreparation.fullContent')}
-                    </span>
-                  )}
+                <div className="md:col-span-2 p-6">
+                  <div className="text-sm text-gray-500 mb-2">{t('blog.posts.auditPreparation.date')}</div>
+                  <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.auditPreparation.title')}</h3>
+                  <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
+                    {t('blog.posts.auditPreparation.excerpt')}
+                    {expandedPosts.auditPreparation && (
+                      <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
+                        {t('blog.posts.auditPreparation.fullContent')}
+                      </span>
+                    )}
                   </p>
                   <button 
                     onClick={() => togglePostExpansion('auditPreparation')} 
@@ -161,11 +161,11 @@ export default function Blog() {
               </div>
             </div>
 
-            {/* Blog Post 3 - Horizontal Layout */}
+            {/* Blog Post 3 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 h-48 md:h-auto">
-                  <div className="h-full">
+              <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="md:col-span-1 md:self-start">
+                  <div className="aspect-[4/3] w-full">
                     <img 
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2ctStmXcYs9vMjIOURpJDW7dsl_AwZuAOA&s" 
                       alt={t('blog.posts.businessGrowth.imageAlt')} 
@@ -173,16 +173,16 @@ export default function Blog() {
                     />
                   </div>
                 </div>
-              <div className="md:w-2/3 p-6">
-              <div className="text-sm text-gray-500 mb-2">{t('blog.posts.businessGrowth.date')}</div>
-              <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.businessGrowth.title')}</h3>
-              <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
-                {t('blog.posts.businessGrowth.excerpt')}
-                {expandedPosts.businessGrowth && (
-                  <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
-                    {t('blog.posts.businessGrowth.fullContent')}
-                  </span>
-                )}
+                <div className="md:col-span-2 p-6">
+                  <div className="text-sm text-gray-500 mb-2">{t('blog.posts.businessGrowth.date')}</div>
+                  <h3 className="text-xl font-bold text-[#70275a] mb-2">{t('blog.posts.businessGrowth.title')}</h3>
+                  <p className="text-gray-600 mb-4" style={{ whiteSpace: 'pre-line' }}>
+                    {t('blog.posts.businessGrowth.excerpt')}
+                    {expandedPosts.businessGrowth && (
+                      <span className="block mt-2" style={{ whiteSpace: 'pre-line' }}>
+                        {t('blog.posts.businessGrowth.fullContent')}
+                      </span>
+                    )}
                   </p>
                   <button 
                     onClick={() => togglePostExpansion('businessGrowth')} 
