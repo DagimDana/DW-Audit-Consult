@@ -98,12 +98,14 @@ export default function Blog() {
             {/* Blog Post 1 - Horizontal Layout */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3">
-                  <img 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqM-RLlDhz-83WKIqhXwPaWqy5nwlrh3S7A&s" 
-                    alt={t('blog.posts.taxPlanning.imageAlt')} 
-                    className="w-full h-48 md:h-full object-cover"
-                  />
+                <div className="md:w-1/3 h-48 md:h-auto">
+                  <div className="h-full">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqM-RLlDhz-83WKIqhXwPaWqy5nwlrh3S7A&s" 
+                      alt={t('blog.posts.taxPlanning.imageAlt')} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 <div className="md:w-2/3 p-6">
                 <div className="text-sm text-gray-500 mb-2">{t('blog.posts.taxPlanning.date')}</div>
@@ -129,12 +131,14 @@ export default function Blog() {
             {/* Blog Post 2 - Horizontal Layout */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3">
-                  <img 
-                    src="https://newbusinessethiopia.com/amharic/wp-content/uploads/sites/4/2023/06/%E1%88%B5%E1%88%88%E1%8A%AA%E1%88%AB%E1%8B%AD-%E1%8C%88%E1%89%A2-%E1%8C%8D%E1%89%A5%E1%88%AD.jpg" 
-                    alt={t('blog.posts.auditPreparation.imageAlt')} 
-                    className="w-full h-48 md:h-full object-cover"
-                  />
+                <div className="md:w-1/3 h-48 md:h-auto">
+                  <div className="h-full">
+                    <img 
+                      src="https://newbusinessethiopia.com/amharic/wp-content/uploads/sites/4/2023/06/%E1%88%B5%E1%88%88%E1%8A%AA%E1%88%AB%E1%8B%AD-%E1%8C%88%E1%89%A2-%E1%8C%8D%E1%89%A5%E1%88%AD.jpg" 
+                      alt={t('blog.posts.auditPreparation.imageAlt')} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 <div className="md:w-2/3 p-6">
                 <div className="text-sm text-gray-500 mb-2">{t('blog.posts.auditPreparation.date')}</div>
@@ -160,12 +164,14 @@ export default function Blog() {
             {/* Blog Post 3 - Horizontal Layout */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3">
-                  <img 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2ctStmXcYs9vMjIOURpJDW7dsl_AwZuAOA&s" 
-                    alt={t('blog.posts.businessGrowth.imageAlt')} 
-                    className="w-full h-48 md:h-full object-cover"
-                  />
+                <div className="md:w-1/3 h-48 md:h-auto">
+                  <div className="h-full">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2ctStmXcYs9vMjIOURpJDW7dsl_AwZuAOA&s" 
+                      alt={t('blog.posts.businessGrowth.imageAlt')} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               <div className="md:w-2/3 p-6">
               <div className="text-sm text-gray-500 mb-2">{t('blog.posts.businessGrowth.date')}</div>
