@@ -96,7 +96,7 @@ export default function Footer() {
                 rel="noopener noreferrer" 
                 className="text-[#8bc73b] hover:text-white transition-colors duration-300"
               >
-                Dagi Technology
+                Dagim Tech
               </a>
             </p>
           </div>
